@@ -1,0 +1,15 @@
+@mixin blockButton() {
+    border-radius: 10px;
+    display: inline-block;
+    border: none;
+    padding: 15px 32px;
+    color: white;
+}
+
+@mixin blockButtonParameter($fontColor: black) {        // Black is default value if no value is given
+    border-radius: 10px;
+    display: inline-block;
+    border: none;
+    padding: 15px 32px;
+    color: $fontColor;
+}

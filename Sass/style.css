@@ -1,0 +1,140 @@
+.home {
+  background: url("../img/home.png");
+}
+
+.contact {
+  background: url("../img/contact.png");
+}
+
+.about {
+  background: url("../img/about.png");
+}
+
+.blog {
+  background: url("../img/blog.png");
+}
+
+.menu-demo {
+  color: violet;
+}
+
+h2 {
+  color: green;
+  content: "abhilesh malik is a programmer at ttn";
+}
+
+/* This comment will be shown in CSS File */
+body {
+  background-color: #9f2229;
+}
+
+h1 {
+  color: red;
+}
+
+p {
+  color: red;
+}
+
+.content ul li a {
+  color: green;
+}
+
+button {
+  background-color: purple;
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+  padding: 15px 32px;
+  color: white;
+}
+
+.newButton {
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+  padding: 15px 32px;
+  color: white;
+  background-color: blueviolet;
+}
+
+.someButton {
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+  padding: 15px 32px;
+  color: black;
+}
+
+.someButton1 {
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+  padding: 15px 32px;
+  color: pink;
+}
+
+.container .rightCol, .container .leftCol {
+  color: wheat;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+}
+.container .leftCol {
+  float: left;
+  background-color: rosybrown;
+  height: 100px;
+  width: 50%;
+}
+.container .rightCol {
+  float: right;
+  background-color: #080925;
+  height: 100px;
+  width: 50%;
+}
+
+.a-1 {
+  height: 50px;
+  width: 100px;
+  background-color: #e6e600;
+}
+
+.a-2 {
+  height: 50px;
+  width: 200px;
+  background-color: #cccc00;
+}
+
+.a-3 {
+  height: 50px;
+  width: 300px;
+  background-color: #b3b300;
+}
+
+.a-4 {
+  height: 50px;
+  width: 400px;
+  background-color: #999900;
+}
+
+.a-5 {
+  height: 50px;
+  width: 500px;
+  background-color: olive;
+}
+
+.a-6 {
+  height: 50px;
+  width: 600px;
+  background-color: #666600;
+}
+
+.a-7 {
+  height: 50px;
+  width: 700px;
+  background-color: #4d4d00;
+}
+
+/*# sourceMappingURL=style.css.map */

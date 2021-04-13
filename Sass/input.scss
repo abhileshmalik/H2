@@ -1,0 +1,170 @@
+@import "colors";
+@import "mixins";
+
+@function double($var){
+    @return ($var*2);
+}
+
+// Lists
+$menu: (home,contact,about,blog);
+// iterating through Lists
+@each $item in $menu {
+    .#{$item}{
+        background: url('../img/#{$item}.png');
+    }
+}
+
+$a: "demo";
+$new-color: violet;
+
+.menu-#{$a}{        // we have to use # here as it contains String Value
+    color: $new-color;      // we dont use $ here as it is normal variable
+}
+
+$map_name:(
+    a: red,
+    b: blue,
+    c: green,
+);
+
+$map-one:(
+    color1: red,
+    color2: blue,
+);
+$map-two:(
+    color3: green,
+    color4: yellow,
+);
+
+$merged-map: map-merge($map1: $map-one, $map2: $map-two);
+
+$name: "Abhilesh";
+$name2: "Abhilesh Malik is a Programmer at TTN";
+
+h2{
+    // color: map-get($map_name, b)
+    // @if map-has-key($map: $map_name, $key: a) {
+    //     content:  'Map has the Key';   
+    // }
+    // @else {
+    //     content: 'Map does not have your key';
+    // }
+    color: map-get($map: $merged-map, $key: color3);
+    
+    // this will return value in " ".
+    // content: $name;
+
+    // this will return value normally without " ".
+    // content: unquote($name);
+
+    // content: str-length($name);
+    // content: str-insert($name, $insert: "I", $index: 5)
+    // content: str-index($name2, "TTN");
+    // content: to-upper-case($name);
+    content: to-lower-case($name2);
+}
+
+
+// This comment wont be shown in CSS File
+/* This comment will be shown in CSS File */
+$bg-color: #AD141C;
+body{       // using predefined function
+    // background-color: darken($bg-color, $amount: 15%);
+    // background-color: lighten($bg-color, $amount: 15%);
+    // background-color: saturate($bg-color, $amount: 15%);
+    // background-color: desaturate($bg-color, $amount: 15%);
+    // background-color: rgba($bg-color, 0.3);
+    $var:3;
+    @if $var<6 and $var>1{              // or Condition -> @if $var<6 or $var>1{
+        background-color: desaturate($bg-color, $amount: 15%);    
+    } 
+    @else{
+        background-color: rgba($bg-color, 0.3);
+    }
+}
+
+h1{
+    color: $theme-color;
+}
+p{
+    color: $theme-color;
+}
+
+.content{
+    ul{
+        li{
+            a{
+                color: green
+            }
+        }
+    }
+}
+
+button{
+    background-color: purple;
+    @include blockButton();
+}
+
+.newButton{
+    @include blockButton();
+    background-color: blueviolet;
+}
+
+.someButton{
+    @include blockButtonParameter()
+}
+
+.someButton1{
+    @include blockButtonParameter(pink)
+}
+
+// Instead of adding a one more class with . we can use PlaceHolder as we not not using this code directly we are just extending it 
+// .common{
+//     color: wheat;
+//     text-align: center;
+// }
+
+// PlaceHolder Selector Syntax
+%common{
+    color: wheat;
+    text-align: center;
+}
+
+.container{
+    width: 100%;
+    .leftCol{
+        float: left;
+        background-color: rosybrown;
+        height: 100px;
+        width: (100% / 2);
+        // @extend .common
+        @extend %common
+    }
+
+    .rightCol{
+        float: right;
+        background-color: rgb(8, 9, 37);
+        height: double(50px);
+        width: (100% * 0.5);
+        // @extend .common
+        @extend %common
+    }
+}
+
+// @for $i from 1 to 8{
+//     .a-#{$i}{
+//         height: 50px;
+//         width: (100px * $i);
+//         background-color: darken($color: yellow, $amount: 5% *$i);
+//     }
+// }
+
+$it:1;
+@while $it<8 {
+    .a-#{$it}{
+        height: 50px;
+        width: (100px * $it);
+        background-color: darken($color: yellow, $amount: 5% *$it);
+    }
+    $it: $it + 1;
+}
